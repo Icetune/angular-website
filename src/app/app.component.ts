@@ -1,57 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'steven.munk.de';
+export class AppComponent implements OnInit {
+
+images = ['bib.jpg', 'computer.jpg', 'gym.jpg'];
+currentImage = 0;
+
+
+ngOnInit() {
+  this.updateImage();
+}
 
 
 
 
+updateImage() {
+  
+  setInterval(() => {
+    this.currentImage++;
+    this.currentImage = this.currentImage % this.images.length;
+  }, 8000);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
